@@ -1,0 +1,4 @@
+This repository contains a variety of scripts and configuration 
+information I've had to use for Minecraft.
+
+

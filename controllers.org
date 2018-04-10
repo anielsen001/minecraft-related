@@ -1,0 +1,60 @@
+* Game Controllers
+
+** configure xboxdrv on the system
+
+Install the required software 
+#+begin_src
+sudo apt install xboxdrv evtest jstest-gtk
+#+end_src
+
+Check if xpad is in use and remove if needed
+#+begin_src
+lsmod | grep xpad
+sudo rmmod xpad
+#+end_src
+
+Blacklist xpad module by adding this line to modprobe.d
+#+begin_src
+echo "blacklist xpad" | sudo tee -a /etc/modprobe.d/blacklist.conf
+#+end_src
+
+** Create configuration files for the controller
+
+The configuration files consist of two parts. The first part 
+configures the controllers events to match Xbox-like commands and the
+seconds configures the Xbox-commands to map to your application (in
+this case, minecraft).
+
+This repo contained controller setup examples and I forked it to create
+and save the GameSir G3w controller
+https://github.com/piedar/xboxdrv.config
+and 
+https://github.com/anielsen001/xboxdrv.config
+
+This repo contained a controller mapping for Minecraft:
+https://github.com/Chewsterchew/xboxdrv-examples
+
+This repo contained a good discussion of controller setup and 
+configuration information:
+https://github.com/RetroPie/RetroPie-Setup/wiki/Universal-Controller-Calibration-&-Mapping-Using-xboxdrv
+
+It was also important to find a map of the button labels as identified
+by the xboxdrv controller. Found here:
+http://aegidian.org/bb/viewtopic.php?t=16519
+
+** Run xboxdrv with the configuration
+
+xboxdrv can take two config files. I separated out the hardware 
+configuration from the game configuration and started xboxdrv like
+this
+#+begin_src
+sudo xboxdrv -c usb-Xiaoji_Gamesir-G3w-event-joystick.xboxdrv -c Minecraft.xboxdrv
+#+end_src
+
+I'm running xboxdrv with sudo because under Ubuntu 16.04 permissions,
+only the root user can access the usb at the low level needed by
+xboxdrv. To avoid issues, I created sudoers rules for xboxdrv.
+
+** Wrap minecraft and xboxdrv in a script to simplify startup
+
+
