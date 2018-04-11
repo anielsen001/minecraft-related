@@ -12,4 +12,4 @@ java -jar $HOME/minecraft/Minecraft.jar
 
 # kill $XBOXDRV_PID
 
-sudo killall xboxdrv
+sudo /usr/bin/killall xboxdrv
