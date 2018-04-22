@@ -16,6 +16,35 @@ trigger-as-button = true
 # Left joystick is WASD
 # Right joystick is Mouse
 
+# https://www.digminecraft.com/getting_started/game_controls.php
+# for reference keyboard/mouse settings
+# Place/use item: Mouse button2 
+# Mine/destroy iten: Mouse button 1
+# Jump: space
+# fly (creative): space (press twice quickly)
+# stop flying (creative): space (press twice quickly)
+# fly higher (creative): space (hold down)
+# fly lower (creative): lshift (hold down)
+# drop/throw item: Q
+# open crafting menu: Mouse button 2
+# open inventory: E
+# swap items in hands: F
+# walk forward: W
+# walk Backward: S
+# Strafe left: A
+# strafe right: D
+# look: move mouse
+# run/sprint: LCONTROL
+# sneak: LSHIFT
+# change selected item in hotbar: keys 1-9
+# list players: TAB
+# chat: T
+# Run command: T or /
+# take screenshot: F2
+# Toggle fullscreen: F11
+# Toogle perspective: F5
+# Toggle debug window: F3
+
 [ui-axismap]
 x1=KEY_A:KEY_D
 y1=KEY_W:KEY_S
@@ -24,9 +53,12 @@ y2^dead:4000 = REL_Y:750:-1
 
 [ui-buttonmap]
 a = KEY_SPACE
-b = KEY_LEFTSHIFT
-x = KEY_Q
-y = KEY_T
+b = KEY_Q
+#b = KEY_LEFTSHIFT
+#x = KEY_Q
+#y = KEY_T
+x = BTN_RIGHT
+y = KEY_E
 lt = BTN_RIGHT
 rt = BTN_LEFT
 
@@ -48,7 +80,7 @@ dl = rel:REL_WHEEL:1:500
 # rt = KEY_VOLUMEUP
 
 [ui-buttonmap]
-start = KEY_E
+#start = KEY_E
 back  = KEY_ESC
 # guide = KEY_ESC
 
