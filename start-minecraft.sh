@@ -8,7 +8,8 @@
 sudo /usr/bin/xboxdrv -c $HOME/minecraft/xboxdrv/xboxdrv.config/usb-Xiaoji_Gamesir-G3w-event-joystick.xboxdrv -c $HOME/minecraft/xboxdrv/xboxdrv.config/Minecraft.xboxdrv &
 XBOXDRV_PID=$!
 
-java -jar $HOME/minecraft/Minecraft.jar
+#java -jar $HOME/minecraft/Minecraft.jar
+$HOME/minecraft/minecraft-launcher/minecraft-launcher
 
 # kill $XBOXDRV_PID
 
